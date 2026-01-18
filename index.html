@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>St. Anne’s Intermediate College | Ranchi</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <!-- Custom Tailwind Configuration -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            50: '#f0f4ff',
+                            100: '#e0eaff',
+                            500: '#3b82f6',
+                            800: '#1e40af', // Royal Blue
+                            900: '#1e3a8a', // Deep Blue
+                            gold: '#d4af37', // Premium Gold
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* Custom Styles for nuances not covered by utilities */
+        .hero-pattern {
+            background-color: #1e3a8a;
+            background-image: url("https://images.unsplash.com/photo-1541339907198-e08756dedf3f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80");
+            background-blend-mode: multiply;
+            background-size: cover;
+            background-position: center;
+        }
+        
+        .glass-card {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .gold-gradient-text {
+            background: linear-gradient(to right, #d4af37, #f3e5ab, #d4af37);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+    </style>
+</head>
+<body class="font-sans text-slate-800 antialiased bg-gray-50">
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 bg-white/90 backdrop-blur-md border-b border-gray-100 transition-all duration-300" id="navbar">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <div class="flex items-center space-x-3">
+                    <div class="w-10 h-10 bg-brand-900 rounded-lg flex items-center justify-center text-white font-serif font-bold text-xl shadow-md">
+                        SA
+                    </div>
+                    <div>
+                        <span class="block font-serif text-xl font-bold text-slate-900 tracking-tight">St. Anne’s</span>
+                        <span class="block text-xs uppercase tracking-widest text-brand-800 font-semibold">Intermediate College</span>
+                    </div>
+                </div>
+                
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex space-x-8 items-center">
+                    <a href="#about" class="text-slate-600 hover:text-brand-800 font-medium transition-colors">About</a>
+                    <a href="#features" class="text-slate-600 hover:text-brand-800 font-medium transition-colors">Campus</a>
+                    <a href="#reviews" class="text-slate-600 hover:text-brand-800 font-medium transition-colors">Reviews</a>
+                    <a href="#location" class="px-5 py-2.5 bg-brand-900 text-white rounded-full font-medium shadow-lg hover:bg-brand-800 transition-all transform hover:-translate-y-0.5 flex items-center gap-2">
+                        <i data-lucide="map-pin" class="w-4 h-4"></i> Visit Us
+                    </a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-btn" class="text-slate-700 hover:text-brand-900 focus:outline-none">
+                        <i data-lucide="menu" class="w-8 h-8"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu Panel -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-100 absolute w-full shadow-xl">
+            <div class="px-4 pt-4 pb-6 space-y-2">
+                <a href="#about" class="block px-3 py-2 text-base font-medium text-slate-700 hover:bg-brand-50 hover:text-brand-900 rounded-md">About</a>
+                <a href="#features" class="block px-3 py-2 text-base font-medium text-slate-700 hover:bg-brand-50 hover:text-brand-900 rounded-md">Campus</a>
+                <a href="#reviews" class="block px-3 py-2 text-base font-medium text-slate-700 hover:bg-brand-50 hover:text-brand-900 rounded-md">Reviews</a>
+                <a href="#location" class="block px-3 py-2 text-base font-medium text-brand-900 font-bold">Get Directions</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="relative pt-20 h-screen min-h-[600px] flex items-center justify-center hero-pattern text-white overflow-hidden">
+        <div class="absolute inset-0 bg-gradient-to-t from-brand-900/90 via-brand-900/60 to-black/30"></div>
+        
+        <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/10 backdrop-blur-md border border-white/20 mb-6 animate-fade-in-up">
+                <span class="w-2 h-2 rounded-full bg-green-400"></span>
+                <span class="text-sm font-medium tracking-wide">Opens 8:00 AM Monday</span>
+            </div>
+            
+            <h1 class="text-4xl md:text-6xl lg:text-7xl font-serif font-bold mb-6 leading-tight drop-shadow-lg">
+                Excellence in <br/>
+                <span class="text-brand-gold italic">Education</span>
+            </h1>
+            
+            <p class="text-lg md:text-xl text-gray-200 mb-10 max-w-2xl mx-auto font-light leading-relaxed">
+                St. Anne’s Intermediate College provides a conducive environment for academic growth, competitive exam preparation, and holistic development in the heart of Ranchi.
+            </p>
+            
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="#location" class="px-8 py-4 bg-white text-brand-900 rounded-full font-bold shadow-xl hover:bg-gray-50 transition-all transform hover:scale-105">
+                    Locate Campus
+                </a>
+                <a href="#features" class="px-8 py-4 bg-transparent border border-white/40 text-white rounded-full font-medium hover:bg-white/10 transition-all backdrop-blur-sm">
+                    View Highlights
+                </a>
+            </div>
+        </div>
+
+        <!-- Floating Stats Strip -->
+        <div class="absolute bottom-0 left-0 w-full bg-white/5 border-t border-white/10 backdrop-blur-md">
+            <div class="max-w-7xl mx-auto px-4 py-6">
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center divide-x divide-white/10">
+                    <div>
+                        <div class="text-3xl font-serif font-bold text-white">4.1</div>
+                        <div class="text-xs uppercase tracking-wider text-gray-300 mt-1">Google Rating</div>
+                    </div>
+                    <div>
+                        <div class="text-3xl font-serif font-bold text-white">147+</div>
+                        <div class="text-xs uppercase tracking-wider text-gray-300 mt-1">Reviews</div>
+                    </div>
+                    <div>
+                        <div class="text-3xl font-serif font-bold text-white">UPSC</div>
+                        <div class="text-xs uppercase tracking-wider text-gray-300 mt-1">Exam Centre</div>
+                    </div>
+                    <div>
+                        <div class="text-3xl font-serif font-bold text-white">100%</div>
+                        <div class="text-xs uppercase tracking-wider text-gray-300 mt-1">Dedication</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- About & Highlights Grid -->
+    <section id="features" class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-sm font-bold text-brand-600 uppercase tracking-widest mb-2">Why Choose St. Anne's</h2>
+                <h3 class="text-3xl md:text-4xl font-serif font-bold text-slate-900">A Campus Built for Success</h3>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Feature 1 -->
+                <div class="group p-8 rounded-2xl bg-gray-50 hover:bg-brand-50 transition-colors border border-gray-100 hover:border-brand-100">
+                    <div class="w-14 h-14 bg-white rounded-xl shadow-sm flex items-center justify-center mb-6 text-brand-600 group-hover:scale-110 transition-transform duration-300">
+                        <i data-lucide="graduation-cap" class="w-7 h-7"></i>
+                    </div>
+                    <h4 class="text-xl font-bold text-slate-900 mb-3 font-serif">Exam Centre Excellence</h4>
+                    <p class="text-slate-600 leading-relaxed">
+                        Trusted venue for prestigious competitive exams like UPSC and CAPF. Known for strict management and a quiet environment.
+                    </p>
+                </div>
+
+                <!-- Feature 2 -->
+                <div class="group p-8 rounded-2xl bg-gray-50 hover:bg-brand-50 transition-colors border border-gray-100 hover:border-brand-100">
+                    <div class="w-14 h-14 bg-white rounded-xl shadow-sm flex items-center justify-center mb-6 text-brand-600 group-hover:scale-110 transition-transform duration-300">
+                        <i data-lucide="trees" class="w-7 h-7"></i>
+                    </div>
+                    <h4 class="text-xl font-bold text-slate-900 mb-3 font-serif">Spacious Green Ground</h4>
+                    <p class="text-slate-600 leading-relaxed">
+                        A large, well-maintained campus ground providing fresh air and space for relaxation and student activities.
+                    </p>
+                </div>
+
+                <!-- Feature 3 -->
+                <div class="group p-8 rounded-2xl bg-gray-50 hover:bg-brand-50 transition-colors border border-gray-100 hover:border-brand-100">
+                    <div class="w-14 h-14 bg-white rounded-xl shadow-sm flex items-center justify-center mb-6 text-brand-600 group-hover:scale-110 transition-transform duration-300">
+                        <i data-lucide="armchair" class="w-7 h-7"></i>
+                    </div>
+                    <h4 class="text-xl font-bold text-slate-900 mb-3 font-serif">Infrastructure</h4>
+                    <p class="text-slate-600 leading-relaxed">
+                        Features proper seating arrangements, quality benches, and well-ventilated classrooms to ensure student comfort.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Visual Divider / Quote -->
+    <section class="py-20 bg-brand-900 relative overflow-hidden">
+        <div class="absolute inset-0 opacity-10" style="background-image: url('https://www.transparenttextures.com/patterns/cubes.png');"></div>
+        <div class="max-w-4xl mx-auto px-4 text-center relative z-10">
+            <i data-lucide="quote" class="w-12 h-12 text-brand-gold mx-auto mb-6 opacity-80"></i>
+            <blockquote class="text-2xl md:text-3xl font-serif text-white leading-relaxed italic">
+                "Overall well-managed for exams with good campus space and proper seating."
+            </blockquote>
+            <div class="mt-8 flex items-center justify-center gap-2 text-brand-gold">
+                <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                <i data-lucide="star-half" class="w-5 h-5 fill-current"></i>
+                <span class="ml-2 text-white font-sans text-sm tracking-wide opacity-80">- Verified Google Review</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Preview -->
+    <section id="gallery" class="py-24 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row justify-between items-end mb-12">
+                <div>
+                    <h2 class="text-3xl md:text-4xl font-serif font-bold text-slate-900">Life at Campus</h2>
+                    <p class="mt-2 text-slate-600">A glimpse into our academic environment.</p>
+                </div>
+                <!-- <button class="hidden md:flex items-center gap-2 text-brand-800 font-semibold hover:text-brand-600 transition-colors">
+                    View Gallery <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                </button> -->
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="relative h-64 rounded-2xl overflow-hidden group shadow-md">
+                    <img src="https://images.unsplash.com/photo-1562774053-701939374585?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="College Exterior" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                        <span class="text-white font-medium">Main Building</span>
+                    </div>
+                </div>
+                <div class="relative h-64 rounded-2xl overflow-hidden group shadow-md">
+                    <img src="https://images.unsplash.com/photo-1509062522246-3755977927d7?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Classroom" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                        <span class="text-white font-medium">Classrooms</span>
+                    </div>
+                </div>
+                <div class="relative h-64 rounded-2xl overflow-hidden group shadow-md lg:col-span-1 md:col-span-2">
+                    <img src="https://images.unsplash.com/photo-1564981797816-1043664bf78d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Library" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                        <span class="text-white font-medium">Study Areas</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Location & Contact -->
+    <section id="location" class="py-24 bg-white relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                
+                <!-- Info Side -->
+                <div>
+                    <h2 class="text-3xl md:text-4xl font-serif font-bold text-slate-900 mb-6">Visit Us</h2>
+                    <p class="text-lg text-slate-600 mb-10">
+                        Conveniently located in New Barhi Toli, our campus is easily accessible from all major parts of Ranchi.
+                    </p>
+
+                    <div class="space-y-6">
+                        <div class="flex items-start gap-4">
+                            <div class="w-10 h-10 rounded-full bg-brand-50 flex items-center justify-center flex-shrink-0 text-brand-600">
+                                <i data-lucide="map-pin" class="w-5 h-5"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-lg font-bold text-slate-900">Address</h4>
+                                <p class="text-slate-600 mt-1">
+                                    H. B. Road, Udhav Babu Lane,<br>
+                                    New Barhi Toli, Ranchi, Jharkhand – 834001
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4">
+                            <div class="w-10 h-10 rounded-full bg-brand-50 flex items-center justify-center flex-shrink-0 text-brand-600">
+                                <i data-lucide="clock" class="w-5 h-5"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-lg font-bold text-slate-900">Timings</h4>
+                                <p class="text-slate-600 mt-1">
+                                    <span class="font-medium text-green-600">Opens Monday at 8:00 AM</span><br>
+                                    <span class="text-sm text-gray-500">Currently Closed</span>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mt-10 flex gap-4">
+                        <a href="https://www.google.com/maps/search/?api=1&query=St.+Anne’s+Intermediate+College+Ranchi" target="_blank" class="px-6 py-3 bg-brand-900 text-white rounded-lg font-medium shadow-lg hover:bg-brand-800 transition-colors flex items-center gap-2">
+                            <i data-lucide="navigation" class="w-4 h-4"></i> Get Directions
+                        </a>
+                        <button onclick="sharePage()" class="px-6 py-3 bg-white border border-gray-200 text-slate-700 rounded-lg font-medium hover:bg-gray-50 transition-colors flex items-center gap-2">
+                            <i data-lucide="share-2" class="w-4 h-4"></i> Share
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Map Visual (Placeholder Design) -->
+                <div class="h-[400px] bg-slate-100 rounded-2xl overflow-hidden shadow-inner relative border border-slate-200">
+                    <!-- Since we can't embed a real interactive map without an API key, we use a styled placeholder linking out -->
+                    <div class="absolute inset-0 bg-[url('https://api.mapbox.com/styles/v1/mapbox/streets-v11/static/85.3096,23.3441,14,0/800x600?access_token=placeholder')] bg-cover bg-center grayscale opacity-40"></div>
+                    <div class="absolute inset-0 flex items-center justify-center">
+                        <div class="text-center p-8 glass-card rounded-2xl shadow-2xl max-w-xs transform hover:scale-105 transition-transform cursor-pointer">
+                            <i data-lucide="map" class="w-10 h-10 text-brand-600 mx-auto mb-3"></i>
+                            <h3 class="font-bold text-slate-800 mb-1">St. Anne's College</h3>
+                            <p class="text-xs text-slate-500 mb-4">Click to view on Google Maps</p>
+                            <a href="https://www.google.com/maps/search/?api=1&query=St.+Anne’s+Intermediate+College+Ranchi" target="_blank" class="text-sm font-semibold text-brand-600 hover:underline">Open Map</a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-slate-900 text-slate-300 py-12 border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
+                <div>
+                    <div class="flex items-center gap-2 mb-4">
+                        <span class="font-serif text-2xl font-bold text-white">St. Anne’s</span>
+                    </div>
+                    <p class="text-sm text-slate-400 leading-relaxed max-w-xs">
+                        An intermediate college dedicated to fostering academic excellence and character building in Ranchi.
+                    </p>
+                </div>
+                <div>
+                    <h4 class="text-white font-bold mb-4">Quick Links</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="#about" class="hover:text-brand-gold transition-colors">About Us</a></li>
+                        <li><a href="#features" class="hover:text-brand-gold transition-colors">Campus Facilities</a></li>
+                        <li><a href="#location" class="hover:text-brand-gold transition-colors">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-white font-bold mb-4">Location</h4>
+                    <p class="text-sm text-slate-400">
+                        New Barhi Toli, Ranchi, Jharkhand 834001, India
+                    </p>
+                </div>
+            </div>
+            <div class="border-t border-slate-800 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-xs">
+                <p>&copy; 2024 St. Anne’s Intermediate College. All rights reserved.</p>
+                <div class="flex gap-4">
+                    <a href="#" class="hover:text-white transition-colors">Privacy Policy</a>
+                    <a href="#" class="hover:text-white transition-colors">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script>
+        // Initialize Icons
+        lucide.createIcons();
+
+        // Mobile Menu Toggle
+        const mobileBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Close mobile menu when clicking a link
+        document.querySelectorAll('#mobile-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        // Navbar Scroll Effect
+        window.addEventListener('scroll', () => {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 20) {
+                navbar.classList.add('shadow-md');
+            } else {
+                navbar.classList.remove('shadow-md');
+            }
+        });
+
+        // Share Function
+        function sharePage() {
+            if (navigator.share) {
+                navigator.share({
+                    title: 'St. Anne’s Intermediate College',
+                    text: 'Check out St. Anne’s Intermediate College in Ranchi.',
+                    url: window.location.href,
+                })
+                .catch((error) => console.log('Error sharing', error));
+            } else {
+                // Fallback for desktop/unsupported browsers
+                const dummy = document.createElement('input');
+                document.body.appendChild(dummy);
+                dummy.value = window.location.href;
+                dummy.select();
+                document.execCommand('copy');
+                document.body.removeChild(dummy);
+                alert('Link copied to clipboard!');
+            }
+        }
+    </script>
+</body>
+</html>
+
